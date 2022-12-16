@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62C872D294CDE1100F62114 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C872C294CDE1100F62114 /* SeachBar.swift */; };
+		A62C872F294CF48C00F62114 /* ConnectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C872E294CF48C00F62114 /* ConnectionHeader.swift */; };
+		A631D2A0290CB111001E235E /* SimplyCoreAudio in Frameworks */ = {isa = PBXBuildFile; productRef = A631D29F290CB111001E235E /* SimplyCoreAudio */; };
+		A631D2A3290D8A6F001E235E /* SysAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631D2A2290D8A6F001E235E /* SysAudioManager.swift */; };
+		A631D2A5290D8AA1001E235E /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631D2A4290D8AA1001E235E /* AudioDevice.swift */; };
+		A631D2A7290D8AF7001E235E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631D2A6290D8AF7001E235E /* Extensions.swift */; };
+		A631D2AB290DB619001E235E /* Liquid in Frameworks */ = {isa = PBXBuildFile; productRef = A631D2AA290DB619001E235E /* Liquid */; };
 		A6E43650290C628C004F74F8 /* HushApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E4364F290C628C004F74F8 /* HushApp.swift */; };
 		A6E43652290C628C004F74F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E43651290C628C004F74F8 /* ContentView.swift */; };
 		A6E43654290C628E004F74F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6E43653290C628E004F74F8 /* Assets.xcassets */; };
@@ -14,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A62C872C294CDE1100F62114 /* SeachBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachBar.swift; sourceTree = "<group>"; };
+		A62C872E294CF48C00F62114 /* ConnectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHeader.swift; sourceTree = "<group>"; };
+		A631D29D290CA496001E235E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A631D2A2290D8A6F001E235E /* SysAudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysAudioManager.swift; sourceTree = "<group>"; };
+		A631D2A4290D8AA1001E235E /* AudioDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
+		A631D2A6290D8AF7001E235E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A6E4364C290C628C004F74F8 /* Hush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E4364F290C628C004F74F8 /* HushApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HushApp.swift; sourceTree = "<group>"; };
 		A6E43651290C628C004F74F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,12 +40,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A631D2AB290DB619001E235E /* Liquid in Frameworks */,
+				A631D2A0290CB111001E235E /* SimplyCoreAudio in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A631D2A1290D89E8001E235E /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				A631D2A2290D8A6F001E235E /* SysAudioManager.swift */,
+				A631D2A4290D8AA1001E235E /* AudioDevice.swift */,
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		A631D2A8290DADA3001E235E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A6E43643290C628C004F74F8 = {
 			isa = PBXGroup;
 			children = (
@@ -52,11 +83,17 @@
 		A6E4364E290C628C004F74F8 /* Hush */ = {
 			isa = PBXGroup;
 			children = (
+				A631D2A8290DADA3001E235E /* Views */,
+				A631D2A1290D89E8001E235E /* Observables */,
+				A631D29D290CA496001E235E /* Info.plist */,
 				A6E4364F290C628C004F74F8 /* HushApp.swift */,
 				A6E43651290C628C004F74F8 /* ContentView.swift */,
 				A6E43653290C628E004F74F8 /* Assets.xcassets */,
 				A6E43658290C628E004F74F8 /* Hush.entitlements */,
 				A6E43655290C628E004F74F8 /* Preview Content */,
+				A631D2A6290D8AF7001E235E /* Extensions.swift */,
+				A62C872C294CDE1100F62114 /* SeachBar.swift */,
+				A62C872E294CF48C00F62114 /* ConnectionHeader.swift */,
 			);
 			path = Hush;
 			sourceTree = "<group>";
@@ -85,6 +122,10 @@
 			dependencies = (
 			);
 			name = Hush;
+			packageProductDependencies = (
+				A631D29F290CB111001E235E /* SimplyCoreAudio */,
+				A631D2AA290DB619001E235E /* Liquid */,
+			);
 			productName = Hush;
 			productReference = A6E4364C290C628C004F74F8 /* Hush.app */;
 			productType = "com.apple.product-type.application";
@@ -97,7 +138,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					A6E4364B290C628C004F74F8 = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -113,6 +154,10 @@
 				Base,
 			);
 			mainGroup = A6E43643290C628C004F74F8;
+			packageReferences = (
+				A631D29E290CB111001E235E /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */,
+				A631D2A9290DB618001E235E /* XCRemoteSwiftPackageReference "liquid" */,
+			);
 			productRefGroup = A6E4364D290C628C004F74F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A631D2A7290D8AF7001E235E /* Extensions.swift in Sources */,
+				A62C872F294CF48C00F62114 /* ConnectionHeader.swift in Sources */,
+				A631D2A3290D8A6F001E235E /* SysAudioManager.swift in Sources */,
 				A6E43652290C628C004F74F8 /* ContentView.swift in Sources */,
+				A631D2A5290D8AA1001E235E /* AudioDevice.swift in Sources */,
+				A62C872D294CDE1100F62114 /* SeachBar.swift in Sources */,
 				A6E43650290C628C004F74F8 /* HushApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +230,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -197,7 +248,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -240,6 +291,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -251,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -266,21 +318,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Hush/Hush.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Hush/Preview Content\"";
 				DEVELOPMENT_TEAM = 229B6HXMD4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hush/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hush;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gatewai.Hush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,21 +352,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Hush/Hush.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Hush/Preview Content\"";
 				DEVELOPMENT_TEAM = 229B6HXMD4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hush/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Hush;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gatewai.Hush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,6 +402,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A631D29E290CB111001E235E /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rnine/SimplyCoreAudio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		A631D2A9290DB618001E235E /* XCRemoteSwiftPackageReference "liquid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maustinstar/liquid";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A631D29F290CB111001E235E /* SimplyCoreAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A631D29E290CB111001E235E /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */;
+			productName = SimplyCoreAudio;
+		};
+		A631D2AA290DB619001E235E /* Liquid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A631D2A9290DB618001E235E /* XCRemoteSwiftPackageReference "liquid" */;
+			productName = Liquid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A6E43644290C628C004F74F8 /* Project object */;
 }

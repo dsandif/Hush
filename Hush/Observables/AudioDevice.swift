@@ -9,7 +9,7 @@ import Foundation
 import SimplyCoreAudio
 import CoreAudio
 
-class ObservableAudioDevice: ObservableObject {
+class AudioDeviceObject: ObservableObject {
     @Published var id: AudioObjectID
     @Published var name: String
     @Published var transportType: TransportType?
@@ -75,11 +75,12 @@ class ObservableAudioDevice: ObservableObject {
     func clockSourceName(for id: UInt32) -> String {
         device.clockSourceName(clockSourceID: id) ?? "Default"
     }
+  
 }
 
 // MARK: - Hashable Conformance
 
-extension ObservableAudioDevice: Hashable {
+extension AudioDeviceObject: Hashable {
     /// The hash value.
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -88,12 +89,12 @@ extension ObservableAudioDevice: Hashable {
 
 // MARK: - Equatable Conformance
 
-func == (lhs: ObservableAudioDevice, rhs: ObservableAudioDevice) -> Bool {
+func == (lhs: AudioDeviceObject, rhs: AudioDeviceObject) -> Bool {
     return lhs.hashValue == rhs.hashValue
 }
 
 // MARK: - Comparable Conformance
 
-func < (lhs: ObservableAudioDevice, rhs: ObservableAudioDevice) -> Bool {
+func < (lhs: AudioDeviceObject, rhs: AudioDeviceObject) -> Bool {
     return lhs.name < rhs.name
 }

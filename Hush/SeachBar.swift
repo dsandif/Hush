@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct SearchBar: View {
-    
     @Binding var searchText: String
     @Binding var searching: Bool
-    
+  
     var body: some View {
         ZStack {
-            Rectangle()
-                .foregroundColor(Color("LightGray"))
-            HStack {
+          Rectangle()
+            .foregroundColor(Color("LightGray"))
+          HStack(spacing: 0) {
                 Image(systemName: "magnifyingglass")
-                TextField("Search ..", text: $searchText) { startedEditing in
+                TextField("Search", text: $searchText) { startedEditing in
                     if startedEditing {
                         withAnimation {
                             searching = true
@@ -29,9 +28,9 @@ struct SearchBar: View {
                         searching = false
                     }
                 }
-            }
-            .foregroundColor(.gray)
-            .padding(.leading, 13)
+          }
+          .textFieldStyle(.squareBorder)
+          .foregroundColor(.gray)
         }
         .frame(height: 40)
         .cornerRadius(13)

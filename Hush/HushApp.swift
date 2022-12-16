@@ -6,29 +6,28 @@
 //
 
 import SwiftUI
-import Foundation
+import SimplyCoreAudio
+import Liquid
 
 @main
 struct MenuApp: App {
-    // 1
-    @State var currentNumber: String = "1"
+    @StateObject private var sca = SysAudioManager()
+    @State var selectedDevice: AudioDeviceObject?
+    @State var currentNumber: String = "HUSH"
     
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra("HUSH") {
+          ContentView()
+          .environmentObject(sca)
+            
+          Divider()
+
+          Button("Quit") {
+            NSApplication.shared.terminate(nil)
+          }.keyboardShortcut("q")
         }
-        // 2
-        MenuBarExtra(currentNumber, systemImage: "\(currentNumber).circle") {
-            // 3
-            Button("One") {
-                currentNumber = "1"
-            }
-            Button("Two") {
-                currentNumber = "2"
-            }
-            Button("Three") {
-                currentNumber = "3"
-            }
-        }
+        
+        .menuBarExtraStyle(.window)
+//        .windowResizability(.contentMinSize)
     }
 }

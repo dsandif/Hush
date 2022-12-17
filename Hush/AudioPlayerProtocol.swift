@@ -10,7 +10,7 @@ import Foundation
 /**
  Represents an instance of an integration/application
  */
-protocol StatusBarApplication {
+protocol StatusBarApplication: AppEventDelegate {
   var currentTrack: AudioTrack {get set}  // The current playing track.
   var soundVolume: Int {get set} // The sound output volume (0 = minimum, 100 = maximum)
   var playerState: PlayerState {get}  // Is player stopped, paused, or playing?
@@ -29,6 +29,15 @@ protocol StatusBarApplication {
   func playTrack(for track: AudioTrack)  // Start playback of a track in the given context.
 }
 
+protocol AppEventDelegate {
+  init()  // Initialize app - should be required
+  func registerApp()  // setup background events
+  func appLaunched()  // Observer
+  func appTerminated()  // Observer
+  func authenticateUser() // Handle user auth
+  func systemPermissions()  // Handle getting permission for apple events
+}
+
 enum PlayerState {
   case stopped
   case paused
@@ -45,7 +54,7 @@ protocol AudioPlayer {
   func pause() -> Bool
 }
 
-class AudioTrack {
+final class AudioTrack {
   var id: String = ""  // The ID of the item.
   var artist: String = ""  // The artist of the track.
   var album: String = ""  // The album of the track.
@@ -61,5 +70,7 @@ class AudioTrack {
   var spotifyUrl: String = ""  // The URL of the track.
 }
 
-class Spotify{}
-class AppleItunes{}
+final class Spotify{}
+final class AppleItunes{}
+
+

@@ -19,7 +19,8 @@ protocol StatusBarApplication {
   var repeating: Bool {get set} // Is repeating on or off?
   var shufflingEnabled: Bool {get set} // Is shuffling enabled in the current playback context?
   var shuffling: Bool {get set} // Is shuffling on or off?
-
+  var properties: [String: Any] {get set} // dictionary with extra properties from json
+  
   func nextTrack() -> Bool  // Skip to the next track.
   func previousTrack() -> Bool // Skip to the previous track.
   func playpause() -> Bool  // Toggle play/pause.
@@ -59,3 +60,6 @@ class AudioTrack {
   var albumArtist: String = ""  // That album artist of the track.
   var spotifyUrl: String = ""  // The URL of the track.
 }
+
+class Spotify{}
+class AppleItunes{}

@@ -26,7 +26,6 @@ struct MenuApp: App {
             NSApplication.shared.terminate(nil)
           }.keyboardShortcut("q")
         }
-        
         .menuBarExtraStyle(.window)
 //        .windowResizability(.contentMinSize)
     }

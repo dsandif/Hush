@@ -15,7 +15,7 @@ struct PlayerControl: View {
       HStack{
         VStack(alignment: .leading){
           AppLogo(category: category)
-            .padding([.leading,.top],0)
+            .padding([.leading,.top], 0)
           HStack(alignment: .top){
             VStack(alignment: .leading){
               Text("All I need")
@@ -26,6 +26,7 @@ struct PlayerControl: View {
             }.fontWeight(.light)
           }
         }
+        
         VStack{
           HStack(alignment: .center, spacing: 20){
             Button(action: {print("tapped")}){
@@ -34,13 +35,13 @@ struct PlayerControl: View {
                 .aspectRatio(contentMode: .fit)
                 .padding(12)
                 .clipShape(Circle())
-                .overlay(Circle().stroke(.gray, lineWidth: 0.3))
+                .overlay(Circle().stroke(.clear, lineWidth: 0.3))
                 .scaledToFit()
                 .contentShape(Rectangle())
                 .onTapGesture {
                     print("back tapped")
                 }
-            }.buttonStyle(.plain)
+            }.buttonStyle(ActiveBorderStyle())
             
             Button(action:{}){
               Image(systemName: isPlaying ? "pause":"play")
@@ -55,7 +56,7 @@ struct PlayerControl: View {
                     isPlaying.toggle()
                     print("play tapped")
                 }
-            }.buttonStyle(.plain)
+            }.buttonStyle(ActiveBorderStyle())
             
             Button(action: {print("tapped")}){
               Image(systemName: "forward.fill")
@@ -63,13 +64,13 @@ struct PlayerControl: View {
                 .aspectRatio(contentMode: .fit)
                 .padding(12)
                 .clipShape(Circle())
-                .overlay(Circle().stroke(.gray, lineWidth: 0.3))
+                .overlay(Circle().stroke(.clear, lineWidth: 0.3))
                 .scaledToFit()
                 .contentShape(Rectangle())
                 .onTapGesture {
                     print("forward tapped")
                 }
-            }.buttonStyle(.plain)
+            }.buttonStyle(ActiveBorderStyle())
           }
           HStack(alignment: .center){
             Text("2:29").foregroundColor(.gray)
@@ -82,6 +83,20 @@ struct PlayerControl: View {
           
         }.padding(.horizontal, 20)
       }
+    }
+}
+
+struct ActiveBorderStyle: ButtonStyle {
+    var showBorder: Bool = false
+    init(border: Bool = false) {
+      self.showBorder = border
+    }
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        .overlay((showBorder || configuration.isPressed) == true ?
+              Circle().stroke(.gray, lineWidth: configuration.isPressed ? 1: 0.3)
+                .foregroundColor(configuration.isPressed ? .gray : .clear) : nil
+            )
     }
 }
 

@@ -27,35 +27,48 @@ struct PlayerControl: View {
           }
         }
         VStack{
-          HStack{
+          HStack(alignment: .center, spacing: 20){
             Button(action: {print("tapped")}){
               Image(systemName: "backward.fill")
-                .font(.caption2)
+                .frame(width: 12, height: 12)
                 .aspectRatio(contentMode: .fit)
                 .padding(12)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(.gray, lineWidth: 0.3))
                 .scaledToFit()
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    print("back tapped")
+                }
             }.buttonStyle(.plain)
             
-            Button(action: {isPlaying.toggle()}){
-              Image(systemName: isPlaying ? "play":"pause.fill")
-                .font(.caption2)
+            Button(action:{}){
+              Image(systemName: isPlaying ? "pause":"play")
+                .frame(width: 12, height: 12)
                 .aspectRatio(contentMode: .fit)
                 .padding(12)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(.gray, lineWidth: 0.3))
                 .scaledToFit()
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    isPlaying.toggle()
+                    print("play tapped")
+                }
             }.buttonStyle(.plain)
             
             Button(action: {print("tapped")}){
               Image(systemName: "forward.fill")
-                .font(.caption2)
+                .frame(width: 12, height: 12)
                 .aspectRatio(contentMode: .fit)
                 .padding(12)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(.gray, lineWidth: 0.3))
                 .scaledToFit()
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    print("forward tapped")
+                }
             }.buttonStyle(.plain)
           }
           HStack(alignment: .center){
@@ -79,7 +92,6 @@ struct PlayerControl_Previews: PreviewProvider {
           PlayerControl(category: cat, isPlaying: .random())
           Divider()
         }
-      }
-      
+      }.padding()
     }
 }

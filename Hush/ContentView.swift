@@ -10,48 +10,78 @@ import SimplyCoreAudio
 import Liquid
 
 struct ContentView: View {
-    @EnvironmentObject var sca: SysAudioManager
-    @State var selectedDevice: AudioDeviceObject?
-    @State var searchtext: String = ""
-    @State var searching = false
+  @EnvironmentObject var sca: SysAudioManager
+  @State var selectedDevice: AudioDeviceObject?
+  @State var searchtext: String = ""
+  @State var searching = false
     
   var body: some View {
       VStack(alignment: .leading){
         List {
-          ConnectionHeader()
-          SearchBar(searchText: $searchtext, searching: $searching)
-          Text("Other Sources".uppercased()).bold().font(.caption2)
-            .foregroundColor(.secondary)
-          ForEach(sca.devices, id: \.self) { device in
-            HStack{
-              icon
-              Text(device.name)
-//              Text(device.uid)
-            }
-            .foregroundColor(.white)
-            .font(.caption)
-          }
+          header
+          otherSources
           Spacer()
-          Text("Apps".uppercased()).bold().font(.caption2)
-            .foregroundColor(.secondary)
-          ForEach(Category.allCases){cat in
-            PlayerControl(category: cat).frame(width: 350)
-            Divider()
-              .padding(0)
-          }
+          appsSection
         }
-        
-        Divider()
-        HStack(spacing: 5){
-          Image(systemName: "slider.horizontal.3")
-          Text("Preferences")
-            .foregroundColor(.gray)
-        }.padding([.leading], 15)
+        footer
         Spacer()
       }
       .frame(width: 400)
-    }
+  }
   
+  var header: some View{
+    Group{
+      ConnectionHeader()
+      SearchBar(searchText: $searchtext, searching: $searching)
+    }
+  }
+  
+  var appsSection: some View{
+    Group{
+      Text("Apps".uppercased()).bold().font(.caption2)
+        .foregroundColor(.secondary)
+      ForEach(Category.allCases){cat in
+        PlayerControl(category: cat).frame(width: 350)
+        Divider()
+          .padding(0)
+      }
+    }
+  }
+  
+  var otherSources: some View{
+    Group{
+      Text("Sound Sources".uppercased()).bold().font(.caption2)
+        .foregroundColor(.secondary)
+      ForEach(sca.devices, id: \.self) { device in
+        HStack{
+          icon
+          Text(device.name)
+  //              Text(device.uid)
+        }
+        .foregroundColor(.white)
+        .font(.caption)
+      }
+    }
+  }
+  
+  
+  var footer: some View{
+    HStack(spacing: 7){
+      Spacer()
+      Button(action:{}) {
+        Image(systemName: "slider.horizontal.3")
+      }.buttonStyle(.plain)
+      Rectangle()
+        .frame(width: 1,height: 12)
+      Button("􀆨") {
+        NSApplication.shared.terminate(nil)
+      }
+      .buttonStyle(.plain)
+      .keyboardShortcut("q")
+    }
+    .foregroundColor(.gray)
+    .padding([.horizontal], 15)
+  }
     var icon: some View{
       ZStack {
 //        Light Background

@@ -27,8 +27,17 @@ struct ContentView: View {
               icon
               Text(device.name)
 //              Text(device.uid)
-            }.foregroundColor(.white)
-              .font(.caption)
+            }
+            .foregroundColor(.white)
+            .font(.caption)
+          }
+          Spacer()
+          Text("Apps".uppercased()).bold().font(.caption2)
+            .foregroundColor(.secondary)
+          ForEach(Category.allCases){cat in
+            PlayerControl(category: cat).frame(width: 350)
+            Divider()
+              .padding(0)
           }
         }
         
@@ -40,7 +49,7 @@ struct ContentView: View {
         }.padding([.leading], 15)
         Spacer()
       }
-      .frame(width: 200)
+      .frame(width: 400)
     }
   
     var icon: some View{

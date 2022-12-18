@@ -15,6 +15,8 @@ enum Category: String, CaseIterable {
     case pandora
     case xbox
     case youtubeMusic
+    case firefox
+    case chrome
     
     var systemNameIcon: String? {
         switch self {
@@ -28,6 +30,10 @@ enum Category: String, CaseIterable {
           return "xbox.logo"
         case .youtubeMusic:
           return "play.tv.fill"
+        case .firefox:
+          return "flame.fill"
+        case .chrome:
+          return "network"
         }
     
     }
@@ -43,6 +49,10 @@ enum Category: String, CaseIterable {
           return Gradient(colors: [.green,.yellow,.green])
         case .youtubeMusic:
           return Gradient(colors: [.red])
+        case .firefox:
+          return Gradient(colors: [.pink,.orange])
+        case .chrome:
+          return Gradient(colors: [.blue, .teal, .indigo])
         }
     }
   
@@ -57,6 +67,10 @@ enum Category: String, CaseIterable {
       case .xbox:
         return .white.opacity(0.1)
       case .youtubeMusic:
+        return .white.opacity(0.8)
+      case .firefox:
+        return .red.opacity(0.4)
+      case .chrome:
         return .white.opacity(0.8)
       }
     }
@@ -73,6 +87,10 @@ enum Category: String, CaseIterable {
         return "XBOX"
       case .youtubeMusic:
         return "Music"
+      case .chrome:
+        return "chrome"
+      case .firefox:
+        return "firefox"
       }
     }
   
@@ -86,8 +104,10 @@ enum Category: String, CaseIterable {
       return "Gotham Bold"
     case .xbox:
       return "Gotham Bold"
+    case .youtubeMusic:
+      return "gotham Black"
     default:
-      return "Gotham Black"
+      return "Gotham Bold"
     }
   }
   

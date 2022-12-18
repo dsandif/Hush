@@ -19,12 +19,6 @@ struct MenuApp: App {
         MenuBarExtra("HUSH") {
           ContentView()
           .environmentObject(sca)
-            
-          Divider()
-
-          Button("Quit") {
-            NSApplication.shared.terminate(nil)
-          }.keyboardShortcut("q")
         }
         .menuBarExtraStyle(.window)
 //        .windowResizability(.contentMinSize)

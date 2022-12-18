@@ -36,7 +36,7 @@ enum Category: String, CaseIterable {
         case .apple:
           return Gradient(colors: [.white])
         case .spotify:
-          return Gradient(colors: [.green])
+          return Gradient(colors: [.green.opacity(0.7)])
         case .pandora:
           return Gradient(colors: [.blue,.indigo,.teal])
         case .xbox:

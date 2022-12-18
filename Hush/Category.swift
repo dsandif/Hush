@@ -52,7 +52,7 @@ enum Category: String, CaseIterable {
         case .firefox:
           return Gradient(colors: [.pink,.orange])
         case .chrome:
-          return Gradient(colors: [.blue, .teal, .indigo])
+          return Gradient(colors: [.blue, .teal, .white])
         }
     }
   
@@ -69,9 +69,9 @@ enum Category: String, CaseIterable {
       case .youtubeMusic:
         return .white.opacity(0.8)
       case .firefox:
-        return .red.opacity(0.4)
+        return .pink.opacity(0.1)
       case .chrome:
-        return .white.opacity(0.8)
+        return .blue.opacity(0.2)
       }
     }
   

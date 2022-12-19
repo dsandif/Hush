@@ -18,10 +18,10 @@ struct PlayerControl: View {
             .padding([.leading,.top], 0)
           HStack(alignment: .top){
             VStack(alignment: .leading){
-              Text("All I need")
+              Text("All I need".localizedCapitalized)
                 .foregroundColor(.gray)
                 .font(.caption)
-              Text("Lee Fields & The Expressions")
+              Text("Lee Fields & The Expressions".localizedCapitalized)
                 .font(.caption2)
             }.fontWeight(.light)
           }

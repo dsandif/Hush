@@ -70,16 +70,19 @@ struct ContentView: View {
       Spacer()
       Button(action:{}) {
         Image(systemName: "slider.horizontal.3")
-      }.buttonStyle(.plain)
+      }.foregroundColor(.gray)
+      .buttonStyle(.plain)
       Rectangle()
         .frame(width: 1,height: 12)
+          .foregroundColor(.gray)
       Button("􀆨") {
         NSApplication.shared.terminate(nil)
       }
+      .foregroundColor(.pink)
       .buttonStyle(.plain)
       .keyboardShortcut("q")
     }
-    .foregroundColor(.gray)
+    .opacity(0.6)
     .padding([.horizontal], 15)
   }
     var icon: some View{

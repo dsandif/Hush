@@ -20,7 +20,7 @@ struct ConnectionHeader: View {
             Circle()
               .frame(width: 5, height: 5)
               .padding(.trailing,5)
-            Text(status.uppercased()).bold().font(.caption2)
+            Text(status.uppercased()).fontWeight(.ultraLight).font(.caption2)
             Spacer()
           }
           .foregroundColor(.green)

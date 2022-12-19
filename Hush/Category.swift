@@ -25,7 +25,7 @@ enum Category: String, CaseIterable {
         case .pandora:
           return "shippingbox.fill"
         case .spotify:
-          return nil
+          return "aqi.medium"
         case .xbox:
           return "xbox.logo"
         case .youtubeMusic:
@@ -42,7 +42,7 @@ enum Category: String, CaseIterable {
         case .apple:
           return Gradient(colors: [.white])
         case .spotify:
-          return Gradient(colors: [.green.opacity(0.7)])
+          return Gradient(colors: [.gray,.green,.green.opacity(0.7)])
         case .pandora:
           return Gradient(colors: [.blue,.indigo,.teal])
         case .xbox:
@@ -50,7 +50,7 @@ enum Category: String, CaseIterable {
         case .youtubeMusic:
           return Gradient(colors: [.red])
         case .firefox:
-          return Gradient(colors: [.pink,.orange])
+          return Gradient(colors: [.purple.opacity(0.5),.pink,.orange])
         case .chrome:
           return Gradient(colors: [.blue, .teal, .white])
         }
@@ -69,7 +69,7 @@ enum Category: String, CaseIterable {
       case .youtubeMusic:
         return .white.opacity(0.8)
       case .firefox:
-        return .pink.opacity(0.1)
+        return Color(nsColor: #colorLiteral(red: 0.5, green: 0.02, blue: 0.9, alpha: 0.5)).opacity(0.3)
       case .chrome:
         return .blue.opacity(0.2)
       }

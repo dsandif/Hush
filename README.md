@@ -3,23 +3,23 @@ Calm all the noise on MacOS.
 
 Hush helps you manage all the noise your Mac makes. Control Streaming Audio, Microphone, Fan noise and security.
 
-.:: Sound ::.
+#### .:: Sound ::.
 - Quickly control volume for each application or the entire system in one place.
 - Integrates with Apple Music, Spotify, Pandora and others.
 - Control your soundstage with multiple connected speakers.
 - Create stereo pairs with any type of speaker, regardless of manufacturer.
 - Stream audio to other applications like Discord.
 
-.:: Fan Control ::.
+#### .:: Fan Control ::.
 - Hush your fan temporarily during video calls without causing harm to your system.
 
-.:: Security ::.
+#### .:: Security ::.
 - Mute your mic system wide so applications cannot record audio without your knowledge.
 - Revoke mic access to applications on-the-fly.
 - View which applications are frequently accessing your microphone.
 - Touchbar support
 
-.:: Integrations ::.
+#### .:: Integrations ::.
 <p>
   <img width="400" alt="image" src="https://user-images.githubusercontent.com/3058101/208556395-75757fc5-9ccd-46b9-ad1e-d55f22a5dde9.png">
 </p>

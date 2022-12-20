@@ -17,7 +17,8 @@ enum Category: String, CaseIterable {
     case youtubeMusic
     case firefox
     case chrome
-    
+    case playstation
+
     var systemNameIcon: String? {
         switch self {
         case .apple:
@@ -34,6 +35,8 @@ enum Category: String, CaseIterable {
           return "flame.fill"
         case .chrome:
           return "camera.aperture"
+        case .playstation:
+          return "playstation.logo"
         }
     
     }
@@ -53,7 +56,8 @@ enum Category: String, CaseIterable {
           return Gradient(colors: [.purple.opacity(0.5),.pink,.orange])
         case .chrome:
           return Gradient(colors: [.red, .red, .green, .white, .blue, .teal])
-//          return Gradient(colors: [.blue, .teal, .gray.opacity(0.5)])
+        case .playstation:
+          return Gradient(colors: [.blue, .teal, .gray.opacity(0.5)])
         }
     }
   
@@ -73,6 +77,8 @@ enum Category: String, CaseIterable {
         return Color(nsColor: #colorLiteral(red: 0.5, green: 0.02, blue: 0.9, alpha: 0.5)).opacity(0.3)
       case .chrome:
         return .blue.opacity(0.2)
+      case .playstation:
+        return .black.opacity(0.2)
       }
     }
   
@@ -92,21 +98,19 @@ enum Category: String, CaseIterable {
         return "chrome"
       case .firefox:
         return "firefox"
+      case .playstation:
+        return "PS"
       }
     }
   
   var font: String{
     switch self {
-    case .apple:
+    case .apple, .playstation:
       return "PT Sans"
-    case .spotify:
-      return "Gotham Bold"
-    case .pandora:
-      return "Gotham Bold"
-    case .xbox:
-      return "Gotham Bold"
     case .youtubeMusic:
-      return "gotham Black"
+      return "Gotham Black"
+    case .spotify, .xbox, .pandora:
+      return "Gotham Bold"
     default:
       return "Gotham Bold"
     }

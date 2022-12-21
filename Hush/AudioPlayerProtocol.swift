@@ -70,7 +70,7 @@ final class AudioTrack {
   var spotifyUrl: String = ""  // The URL of the track.
 }
 
-final class Spotify{}
+//final class Spotify{}
 final class AppleItunes{}
 
 
